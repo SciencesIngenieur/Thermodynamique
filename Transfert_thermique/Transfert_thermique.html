@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transfert thermique</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Transfert thermique</h1>
+      
+      <h2>Phénomène de diffusion thermique</h2>
+      
+      <h3>Généralités</h3>
+      
+      <div>
+        <u><b>Définition</b>&#x202f;:</u><br />
+        La conduction (ou diffusion) thermique est un mode de transport thermique sans déplacement
+        macroscopique de matière. Ce transfert s’effectue de proche en proche des parties chaudes
+        vers les parties froides, grâce à l’agitation thermique.
+      </div>
+      
+      <div>
+        Citons quelques exemples que l’on rencontre au quotidien&#x202f;:
+        <ul>
+          <li>le fer à repasser transfère de la chaleur aux tissus repassés par conduction</li>
+          <li>la plaque électrique permet de chauffer une casserole d’eau par conduction</li>
+          <li>la sensation de froid que l’on ressent au contact d’une règle métallique est produit
+          par conduction thermique</li>
+        </ul>
+      </div>
+      
+      <div>
+        La conduction thermique nécessitant la présence de matière, il est impossible de transporter
+        de la chaleur via ce mode de transfert dans le vide.
+      </div>
+      
+      <div>
+        Pour caractériser le transport thermique, on définit deux grandeurs&#x202f;: le flux
+        thermique et le courant thermique.
+      </div>
+      
+      <div>
+        Le <b>flux thermique</b> \(\phi_\text{th}\) désigne la puissance thermique qui traverse une
+        surface&#x202f;:
+        $$
+          \quad \boxed{ \phi_\text{th} = \frac{\delta Q}{\mathrm{d}t} }
+        $$
+      </div>
+      
+      <div>
+        La <b>densité de courant thermique</b> \(\overrightarrow{j_\text{th}}\) mesure la
+        répartition du courant thermique dans un milieu. \(\overrightarrow{j_\text{th}}\) est
+        orienté dans le sens du transfert thermique et \(|\overrightarrow{j_\text{th}}|\) désigne le
+        flux thermique par unité de surface (en \(\rm{W.m^{-2}}\)).  Plus généralement, le flux
+        thermique traversant une surface \((S)\) s’exprime en fonction de
+        \(\overrightarrow{j_\text{th}}\)&#x202f;:
+        $$
+          \quad \boxed{ \phi_\text{th} =
+            \iint_{(S)} \overrightarrow{j_\text{th}} \cdot \overrightarrow{\mathrm{d}S} }
+        $$
+      </div>
+      
+      <figure>
+        <img src="flux_thermique.svg">
+        <figcaption>Le flux thermique est le flux de la densité de courant thermique.</figcaption>
+      </figure>
+      
+      <h3>Loi de Fourier</h3>
+      
+      <div>
+        En 1822, Jean-Baptiste Joseph Fourier, publie son <i>Traité analytique de la chaleur</i>
+        dans lequel il énonce la loi relative à la diffusion thermique&#x202f;:
+        $$
+          \quad \boxed{ \begin{aligned}
+            \overrightarrow{j_\text{th}} &= - \lambda \overrightarrow{\nabla} T \\
+            \left[\rm{W/m^2}\right] &= \left[\rm{W.m^{-1}.K^{-1}}\right]
+              \times \left[\rm{K.m^{-1}}\right]
+            \end{aligned}
+          }
+        $$
+        où \(\lambda\) est une constante positive appelée <b>conductivité thermique</b>.
+      </div>
+      
+      <div>
+        Cette loi traduit le fait que le courant thermique est perpendiculaire aux isothermes et
+        dirigé des parties chaudes vers les parties froides. Plus le gradient de température est
+        important, plus le courant thermique l’est aussi.
+      </div>
+      
+      <div>
+        La conductivité thermique est caractéristique du milieu dans le lequel s’effectue le
+        transfert thermique. Plus la conductivité thermique est importante moins le milieu résiste
+        au transfert thermique.
+      </div>
+      
+      <figure>
+        <img src="courant_thermique.svg">
+        <figcaption>Le courant thermique est perpendiculaire aux isothermes et dirigé du chaud vers
+        le froid.</figcaption>
+      </figure>
+      
+      <h3>Équation de la chaleur</h3>
+      
+      <h4>Cas unidimensionnel</h4>
+      
+      <div>
+        Considérons le cas simple d’un milieu au repos soumis à un gradient thermique dans la
+        direction \((Ox)\). On note \(T(x,t)\) la température à un instant \(t\) en un point \(M\)
+        d’abscisse \(x\). Cherchons alors à établir l’équation qui donne l’évolution dans l’espace
+        et le temps du champ de température à partir d’un bilan thermique effectué sur une portion
+        de section \(S\) située entre les abscisses \(x\) et \(x + \mathrm{d}x\). 
+      </div>
+      
+      <figure>
+        <img src="bilan_energie_1D.svg">
+        <figcaption>Bilan d’énergie dans un problème à 1 dimension.</figcaption>
+      </figure>
+      
+      <div>
+        On adoptera les hypothèses suivantes&#x202f;:
+        <ul>
+          <li>le milieu est au repos&#x202f;: la diffusion thermique est le seul mode transfert
+          thermique considéré</li>
+          <li>la capacité thermique massique \(c_p\), la masse volumique \(\rho\) ainsi que la
+          conductivité thermique \(\lambda\) sont considérés constantes</li>
+          <li>le milieu n’est le siège d’aucune réaction chimique ni d’aucun processus produisant ou
+          consommant de la chaleur</li>
+          <li>la pression extérieure est maintenue constante</li>
+        </ul>
+      </div>
+      
+      <div>
+        Le premier principe de la thermodynamique appliqué à ce système entre les instants \(t\) et
+        \(t + \mathrm{d}t\) donne&#x202f;:
+        $$
+          \quad H(t + \mathrm{d}t) - H(t) = \delta Q_p
+        $$
+        où \(H\) est l’enthalpie de la portion étudiée.
+      </div>
+      
+      <div>
+        Le transfert thermique que reçoit le système s’écrit&#x202f;:
+        $$
+          \quad \delta Q_p = \phi_\text{reçu}  \mathrm{d}t
+          = [j_\text{th}(x)S - j_\text{th}(x + \mathrm{d}x)S]\mathrm{d}t
+          = - \frac{\mathrm{d}j_\text{th}}{\mathrm{d}x} S \mathrm{d}x \mathrm{d}t
+        $$
+      </div>
+      
+      <div>
+        La température variant à priori dans le temps, l’enthalpie du système varie&#x202f;:
+        $$
+          \quad \mathrm{d}H = H(t+\mathrm{d}t) - H(t) = \frac{\mathrm{d}H}{\mathrm{d}t}\mathrm{d}t
+          = \left[ \left. \frac{\partial H}{\partial T} \right|_p
+            \frac{\partial T}{\partial t} \right]\mathrm{d}t
+        $$
+      </div>
+      
+      <div>
+        Or par définition, \(\left. \partial H/\partial T \right|_p\) désigne la capacité thermique
+        à pression constant \(C_p\) du système&#x202f;:
+        $$
+          \quad \left. \frac{\partial H}{\partial T} \right|_p = C_p = \rho S \mathrm{d}x c_p
+        $$
+        où \(c_p\) représente la capacité thermique massique.
+      </div>
+      
+      <div>
+        Le premier principe se réécrit donc&#x202f;:
+        $$
+          \quad \left[ \rho S \mathrm{d}x c_p \frac{\partial T}{\partial t} \right] \mathrm{d}t
+          = - \frac{\mathrm{d}j_\text{th}}{\mathrm{d}x} S \mathrm{d}x \mathrm{d}t
+        $$
+      </div>
+      
+      <div>
+        Si on ajoute à cela la loi de Fourier, on trouve finalement&#x202f;:
+        $$
+          \quad \boxed{ \frac{\partial T}{\partial t} = 
+            \frac{\lambda}{\rho c_p }  \frac{\partial^2 T}{\partial x^2} }
+        $$
+      </div>
+      
+      <div>
+        Le champ de température vérifie une équation de diffusion unidimensionnelle dite <b>équation
+        de la chaleur</b>.
+      </div>
+      
+      <h4>Cas tridimensionnel</h4>
+      
+      <div>
+        Cette équation se généralise en trois dimensions. Si l’on conserve les mêmes hypothèses, on
+        trouve&#x202f;:
+        $$
+          \quad \boxed{ \frac{\partial T}{\partial t} = \frac{\lambda}{\rho c_p }
+            \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} 
+            \frac{\partial^2 T}{\partial z^2} \right) }
+          
+        $$
+      </div>
+      
+      <div>
+        Le champ de température vérifie donc une équation aux dérivées partielles d’ordre deux. Son
+        intégration fait alors apparaître des constantes d’intégration que l’on détermine grâce aux
+        conditions initiales et aux limites.
+      </div>
+      
+      <div>
+        L’équation de la chaleur brise la symétrie \(t/-t\) ce qui traduit l’irréversibilité des
+        phénomènes de transfert thermique.
+      </div>
+      
+      <h3>Conditions aux limites</h3>
+      
+      <div>
+        Résoudre l’équation de la chaleur consiste à déterminer le champ de température dans un
+        espace \(\Omega\) sachant que l’on connaît les conditions initiales ainsi que les propriétés
+        sur la frontière \(\delta \Omega\). Dans la pratique on distingue différents cas&#x202f;:
+        <ol>
+          <li>Le système est en contact parfait avec un thermostat de température \(T_0\)&#x202f;:
+          à chaque instant on a la condition aux limites&#x202f;:
+          $$
+            \quad T(M,t) = T_0 \quad \forall M \in \delta \Omega
+          $$</li>
+          <li>Le système est solide et présente une surface de contact avec un autre solide. Si le
+          contact n’est pas parfait, la température n’est pas continue. Cependant le flux thermique
+          est continu.</li>
+          <li>Le système est parfaitement calorifugé c’est-à-dire entouré d’une paroi adiabatique.
+          Dans ce cas&#x202f;:
+          $$
+            \quad \overrightarrow{j_\text{th}}(M,t) \cdot \overrightarrow{n}{}^\text{ext} = 0
+            \quad \forall M \in \delta \Omega
+          $$</li>
+          <li>Le système présente une paroi en contact avec un fluide&#x202f;: la loi de Newton
+          relative à la convection impose alors une condition sur le flux thermique (voir plus
+          loin).</li>
+        </ol>
+      </div>
+      
+      <h3>Résistance thermique</h3>
+      
+      <div>
+        La résistance thermique est une notion très utilisée dans le bâtiment car elle indique le
+        pouvoir isolant d’un matériau.
+      </div>
+      
+      <div>
+        Imaginons un mur homogène d’épaisseur \(e\), de conductivité thermique \(\lambda\) soumis à
+        un gradient thermique. Par ailleurs, admettons que le mur ait des dimensions suffisamment
+        importantes devant son épaisseur pour considérer que le problème ne dépend que de la
+        profondeur \(x\). Le champ de température est alors noté \(T(x,t)\). Le but est d’obtenir le
+        flux thermique qui traverse le mur en régime permanent, lorsqu’une paroi est maintenue à la
+        température \(T_1\) et l’autre à la température \(T_2\).
+      </div>
+      
+      <figure>
+        <img src="flux_thermique_mur.svg">
+        <figcaption>Flux thermique traversant un mur.</figcaption>
+      </figure>
+      
+      <div>
+        En régime permanent, \(\partial T / \partial t = 0\) de sorte que l’équation de la chaleur
+        se ramène à&#x202f;:
+        $$
+          \quad \frac{\mathrm{d}^2T}{\mathrm{d}x^2} = 0 \Rightarrow
+          \frac{\mathrm{d}T}{\mathrm{d}x} = C_1 \Rightarrow
+          T(x) = C_1x + C_2
+        $$
+        Les conditions aux limites imposent&#x202f;:
+        $$
+          \quad \begin{cases}
+          T(0) = T_1 \\
+          T(e) = T_2
+          \end{cases}
+          \Rightarrow
+          \begin{cases}
+          C_2 = T_1 \\
+          C_1 = \frac{T_2 - T_1}{e}
+          \end{cases}
+        $$
+      </div>
+      
+      <div>
+        Finalement le champ de température varie linéairement avec la profondeur&#x202f;:
+        $$
+          T(x) = T_1 + \frac{T_2 - T_1}{e} x
+        $$
+      </div>
+      
+      <figure>
+        <img src="profil_temperature_mur.svg">
+        <figcaption>Profil de température dans un mur.</figcaption>
+      </figure>
+      
+      <div>
+        Le champ de température étant déterminé on peut obtenir la densité de courant thermique
+        ainsi que le flux thermique traversant le mur&#x202f;:
+        $$
+          \quad \overrightarrow{j_\text{th}}
+            = - \lambda \frac{\mathrm{d}T}{\mathrm{d}x} \overrightarrow{u_x}
+            = - \frac{\lambda(T_2 - T_1)}{e}\overrightarrow{u_x}
+        $$
+      </div>
+      
+      <div>
+        On constate d’une part que la densité de courant thermique est uniforme&#x202f;: les lignes
+        de courant thermique sont donc parallèles et les isothermes sont des plans parallèles aux
+        parois. D’autre part, la présence du signe \(-\) indique que, conformément aux principes de
+        la thermodynamique, le transfert s’effectue du chaud vers le froid. Si l’on considère une
+        surface \((S)\) du mur, le flux thermique qui traverse cette surface vaut&#x202f;:
+        $$
+          \quad \phi_\text{th} =
+            \iint_{(S)} \overrightarrow{j_\text{th}} \cdot \overrightarrow{\mathrm{d}S} =
+            \frac{\lambda(T_2 - T_1)}{e} S
+        $$
+        où \(S\) est l’aire de la surface.
+      </div>
+      
+      <div>
+        Le flux thermique est alors proportionnelle à l’écart de température entre les parois. La
+        notion de résistance thermique découle de l’analogie que l’on peut faire avec l’électricité.
+        De la même manière que la résistance électrique d’un conducteur ohmique est le rapport de la
+        différence de potentiel imposée sur le flux électrique (intensité électrique) qui le
+        traverse, la résistance thermique est le rapport de la différence de température sur le flux
+        thermique&#x202f;:
+        $$
+          \quad \boxed{ T_1 - T_2 = R_\text{th}\phi_\text{th} }
+        $$
+        avec
+        $$
+          \quad \boxed{ R_\text{th} = \frac{e}{\lambda S} \quad \left[K.W^{-1}\right] }
+        $$
+      </div>
+      
+      <div>
+        De part cette analogie avec la loi d’Ohm, il en découle les traditionnelles lois de
+        composition des résistances&#x202f;:
+        <ul>
+          <li>quand plusieurs milieux sont traversés par le même flux thermique on peut leur
+          associer une résistance thermique équivalente&#x202f;: \( R_\text{eq} = \sum_i R_i\)</li>
+          <li>quand plusieurs milieux sont soumis à la même différence de température, on peut leur
+          associer une résistance thermique équivalente&#x202f;: \(\frac{1}{R_\text{eq}} = \sum_i
+          \frac{1}{R_i}\)</li>
+        </ul>
+      </div>
+      
+      <table>
+        <caption>Analogies thermo-électriques</caption>
+        <tr>
+          <th>Grandeurs</th>
+          <th>Électriques</th>
+          <th>Thermiques</th>
+        </tr>
+        <tr>
+          <td>Grandeur transportée</td>
+          <td>charge \(q\)</td>
+          <td>transfert thermique \(Q\)</td>
+        </tr>
+        <tr>
+          <td>Flux</td>
+          <td>intensité \(I\)</td>
+          <td>flux thermique \(\phi_\text{th}\)</td>
+        </tr>
+        <tr>
+          <td>Densité de courant</td>
+          <td>\(\overrightarrow{j_\text{e}}\)</td>
+          <td>\(\overrightarrow{j_\text{th}}\)</td>
+        </tr>
+        <tr>
+          <td>Conductivité</td>
+          <td>\(\gamma\)</td>
+          <td>\(\lambda\)</td>
+        </tr>
+        <tr>
+          <td>Loi de la conduction</td>
+          <td>\(\overrightarrow{j_\text{e}} = \gamma \overrightarrow{E}
+            = - \gamma \overrightarrow{\nabla} V\)</td>
+          <td>\(\overrightarrow{j_\text{th}} = -\lambda \overrightarrow{\nabla} T\)</td>
+        </tr>
+        <tr>
+          <td>Gradient</td>
+          <td>\(U = V_1 - V_2\)</td>
+          <td>\(\Delta T = T_1 - T_2\)</td>
+        </tr>
+        <tr>
+          <td>Résistance </td>
+          <td>\(R = U/I\)</td>
+          <td>\(R_\text{th} = \Delta T / \phi_\text{th}\)</td>
+        </tr>
+      </table>
+      
+      <h2>La convection</h2>
+      
+      <h3>Loi de Newton</h3>
+      
+      <div>
+        <u><b>Définition&#x202f;:</b></u></br>
+        La convection est un mode de transfert thermique qui implique un déplacement collectif de
+        fluide. La matière fluide chaude, en se déplaçant, cède de l’énergie aux parties plus
+        froides.
+      </div>
+      
+      <div>
+        On distingue deux types de convection.
+      </div>
+      
+      <div>
+        La <b>convection naturelle</b> est induite lorsque c’est le gradient de température qui
+        provoque le mouvement du fluide. Le chauffage par un convecteur électrique repose sur ce
+        principe&#x202f;: l’air chaud au voisinage du convecteur étant moins dense que l’air
+        environnant, il entame un mouvement ascensionnel du fait de la poussé d’Archimède. Cette
+        ascension aspire de l’air froid qui va pouvoir se réchauffer au contact du convecteur mais
+        permet aussi à l’air chaud d’échanger de l’énergie avec l’air situé en hauteur. De ce fait,
+        l’air en mouvement se refroidit et donc retombe. Cette circulation en rouleau produit une
+        homogénéisation (partielle) de la température beaucoup plus rapide que la conduction.</br>
+      </div>
+      
+      <figure>
+        <img src="Convection_casserole.png" width="40%">
+        <figcaption>Convection naturelle dans une casserole.</figcaption>
+      </figure>
+      
+      <div>
+        La <b>convection forcée</b> est provoquée par une circulation artificielle (pompe, turbine)
+        d’un fluide. Par exemple, dans un sèche-cheveux, un courant d’air est soufflé par un
+        ventilateur au travers d’une résistance électrique chauffante&#x202f;: l’air est chauffée
+        par convection forcée.
+      </div>
+      
+      <div>
+        Par définition, la convection est évidemment absente dans le vide. On pourrait croire
+        qu’elle l’est également dans les solides. En réalité, tout dépend de l’échelle de temps sur
+        laquelle on décrit le phénomène. Par exemple, Le manteau terrestre est vu comme un solide
+        (densité \(d = 3{,}5\)) à l’échelle de l’année mais présente les caractéristiques d’un
+        fluide sur des échelles de temps géologiques. On ne pourrait pas comprendre la vitesse à
+        laquelle la Terre se refroidit ni la tectonique des plaques sans le phénomène de convection
+        mantellique.
+      </div>
+      
+      <div>
+        Le phénomène convectif est difficile à modéliser car ce transport thermique est étroitement
+        lié au type d’écoulement. Le traitement rigoureux nécessite trois bilans (masse, quantité de
+        mouvement et chaleur) et débouche sur des équations aux dérivées partielles couplées en
+        général très complexes. On préfère souvent recourir à des lois phénoménologiques telle que
+        la loi de Newton.
+      </div>
+      
+      <div>
+        <u><b>Loi de Newton&#x202f;:</b></u></br>
+        Au voisinage d’un solide de température de surface \(T_s\), un fluide en mouvement à la
+        température \(T_f\), reçoit une densité de courant thermique&#x202f;:
+        $$
+          \quad \boxed{ \overrightarrow{j_\text{th}} = h(T_s - T_f)\overrightarrow{n}  }
+        $$
+        où \(h\) désigne le coefficient de transfert thermique (en \(\rm{W.m^{-2}.K{^-1}}\)) et
+        \(\overrightarrow{n}\) la normale dirigée vers l’extérieur de la surface solide.</br>
+        Le coefficient \(h\) dépend surtout des propriétés de l’écoulement dans la couche limite
+        située entre le solide et le fluide.
+      </div>
+      
+      <h3>Analyse dimensionnelle</h3>
+      
+      <div>
+        Des lois d’échelle issues de l’analyse dimensionnelle et de résultats d’expérience
+        permettent de calculer le coefficient de transfert en fonction de la géométrie du problème.
+      </div>
+      
+      <div>
+        Prenons par exemple le cas d’un simple échangeur cylindrique de diamètre intérieur \(D\)
+        dans lequel circule un fluide de masse volumique \(\rho\), de viscosité \(\eta\), de
+        conductivité thermique \(\lambda\) et de capacité thermique massique \(c_p\).</br>
+        Lorsque le fluide s’écoule à une vitesse moyenne \(\overline{v}\), un échange convectif a
+        lieu avec l’intérieur du tuyau.</br>
+        Appelons \(h\) le coefficient de transfert associé et cherchons à le relier avec les
+        propriétés du fluide par une analyse dimensionnelle.
+      </div>
+      
+      <figure>
+        <img src="echangeur_cylindrique.svg">
+        <figcaption>Convection dans un échangeur cylindrique.</figcaption>
+      </figure>
+      
+      <table>
+        <caption>Grandeurs physiques impliquées dans le problème.</caption>
+        <tr>
+          <th>Grandeur</th>
+          <td>\(\rho\)</td>
+          <td>\(\overline{v}\)</td>
+          <td>\(D\)</td>
+          <td>\(\eta\)</td>
+          <td>\(\lambda\)</td>
+          <td>\(c_p\)</td>
+          <td>\(h\)</td>
+        </tr>
+        <tr>
+          <th>Dimension</th>
+          <td>\(\rm{ML^{-3}}\)</td>
+          <td>\(\rm{LT^{-1}}\)</td>
+          <td>\(\rm{L}\)</td>
+          <td>\(\rm{ML^{-1}T^{-1}}\)</td>
+          <td>\(\rm{MLT^{-3}\Theta^{-1}}\)</td>
+          <td>\(\rm{L^2T^{-2}\Theta^{-1}}\)</td>
+          <td>\(\rm{MT^{-3}\Theta^{-1}}\)</td>
+        </tr>
+      </table>
+        
+      <div>
+        On cherche une relation entre \(n=7\) grandeurs qui mettent en jeu \(k=4\) dimensions
+        indépendantes. En vertu du théorème \(\Pi\), il existe \(n−k=3\) grandeurs adimensionnées
+        liées entre elles.
+      </div>
+      
+      <div>
+        On peut effectivement construire trois nombres sans dimension&#x202f;:
+        <ol>
+          <li>Le <b>nombre de Reynolds</b> \(R_e = \frac{\rho \overline{v} D }{\eta}\) qui
+          caractérise l’écoulement et qui joue un rôle important en mécanique des fluides.</li>
+          <li>Le <b>nombre de Prandtl</b> \(P_r = \frac{\eta c_p }{\lambda}\). Plus le nombre de
+          Prandtl est élevé, plus la diffusion de masse domine devant la diffusion de chaleur.</li>
+          <li>Le <b>nombre de Nusselt</b> \(N_u = \frac{hD }{\lambda}\). Plus le nombre de Nusselt
+          est important plus le transfert par convection domine devant le transfert par
+          conduction.</li>
+        </ol>
+      </div>
+      
+      <div>
+        D’après le théorème \(\Pi\), on a&#x202f;:
+        $$
+          \quad \boxed{ N_u = f(R_e, P_r) \Rightarrow h = \frac{\lambda}{d}f(R_e, P_r) }
+        $$
+      </div>
+      
+      <div>
+        La fonction \(f\) peut être déterminée de façon empirique ou numérique. Par exemple, pour
+        les fluides usuels et lorsque le régime turbulent est établi, on obtient&#x202f;:
+        $$
+          \quad N_u = 0{,}023 {R_e}^{0{,}8}{P_r}^{1/3}
+        $$
+        si \(P_r \ge 0{,}5\).
+      </div>
+      
+      <h3>Retour sur la résistance thermique</h3>
+      
+      <div>
+        Lors du calcul de la résistance thermique d’une cloison fait précédemment, on a supposé que
+        le mur était en contact parfait avec les milieux extrêmes. En pratique il arrive plus
+        souvent que le mur soit en contact avec des fluides en mouvement. Dans ce cas, la
+        température des parois (notées \(T_{p1}\) et  \(T_{p2}\)) ne coïncide plus avec la
+        température du fluide. Si l’on note \(h_1\) et \(h_2\) les coefficients de transfert
+        associés aux transferts convectifs en \(x = 0\) et en \(x=e\), on obtient une nouvelle
+        expression de la résistance thermique à partir de la continuité du flux thermique&#x202f;:
+        $$
+          \quad \phi_\text{th} = h_1 S (T_1 - T_{p1}) = h_2 S (T_{p2} - T_2)
+          = \frac{T_{p1}-T_{p2}}{R}
+        $$
+        avec \(R = \frac{e}{\lambda S}\).
+      </div>
+      
+      <div>
+        En utilisant \(T_1 - T_2 = (T_1 - T_{p1}) + (T_{p1} - T_{p2}) + (T_{p2} - T_2)\), on
+        trouve&#x202f;:
+        $$
+          \quad T_1 - T_2 = R_\text{th} \phi_\text{th}
+        $$
+        avec \(R_\text{th} = \frac{e}{\lambda S} + \frac{1}{h_1 S} + \frac{1}{h_2 S}\).
+      </div>
+      
+      <div>
+        La résistance thermique augmente quand les transferts convectifs diminuent. C’est pourquoi,
+        une lame d’air statique est plus isolante qu’une lame d’air en mouvement.
+      </div>
+      
+      <figure>
+        <img src="influence_convection.svg">
+        <figcaption>Influence de la convection sur le profil de température.</figcaption>
+      </figure>
+      
+      <h2>Le rayonnement</h2>
+      
+      <div>
+        <u><b>Définition&#x202f;:</b></u></br>
+        Le rayonnement décrit le transport d’énergie via la propagation d’onde électromagnétique. Ce
+        transfert d’énergie est toujours présent, même dans le vide.
+      </div>
+      
+      <div>
+        L’expérience montre que tout corps porté à une température \(T\) émet un rayonnement
+        électromagnétique dit <b>rayonnement thermique</b> dont l’intensité augmente avec la
+        température.
+      </div>
+      
+      <h3>Loi de Stefan-Boltzmann</h3>
+      
+      <div>
+        Les corps qui rayonnent le plus sont ceux qui absorbent le plus. Pour un corps parfaitement
+        absorbant (dit corps noir) de température \(T\), la puissance rayonnée par unité de surface
+        du corps s’écrit&#x202f;:
+        $$
+          \quad \left. \frac{\mathrm{d}\phi}{\mathrm{d}S} \right|_r = \sigma T^4
+        $$
+        où \(T\) est exprimée en kelvin et \(\sigma\) est la constante de Stefan-Boltzmann telle que
+        \(\sigma = 5{,}67.10^{-8} \, \rm{W.m^{-2}.K^{-4}}\).
+      </div>
+      
+      <div>
+        En réalité, un corps n’est jamais complètement absorbant. On parle de corps gris lorsque
+        l’absorption du corps est indépendante de la longueur d’onde. Dans ce cas, on montre que la
+        puissance rayonnée par unité de surface s’écrit&#x202f;:
+        $$
+          \quad \left. \frac{\mathrm{d}\phi}{\mathrm{d}S} \right|_r = \varepsilon \sigma T^4
+        $$
+        où \( 0 \lt \varepsilon \lt 1\) est un coefficient empirique appelé <b>émissivité</b>.
+      </div>
+      
+      <div>
+        Évidemment, en plus de rayonner de l’énergie, un système matériel absorbe également
+        l’énergie rayonné par son environnement. On peut montrer que le flux thermique surfacique
+        net produit pas un corps de température \(T\) dans un environnement de température \(T_0\)
+        s’écrit&#x202f;:
+        $$
+          \quad \boxed{ \frac{\mathrm{d}\phi}{\mathrm{d}S}
+            = \varepsilon \sigma \left( T^4-{T_0}^4 \right) }
+        $$
+      </div>
+
+    </section>
+  </body>
+</html>

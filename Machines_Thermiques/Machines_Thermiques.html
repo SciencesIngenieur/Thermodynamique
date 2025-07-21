@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Machines thermiques</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Machines thermiques</h1>
+      
+      <h2>Théorie des machines</h2>
+      
+      <h3>Généralités</h3>
+      
+      <div>
+        Une <b>machine thermique</b> est un dispositif qui permet d’effectuer des conversions
+        d’énergie thermique en travail, de travail en énergie thermique ou des transferts thermiques
+        d’une source à une autre. Ceci est réalisé grâce à un fluide qui subit un cycle de
+        transformations. Le cycle est&#x202f;:
+        <ul>
+          <li>fermé, s’il n’y’a pas d’échange de matière avec l’extérieur</li>
+          <li>ouvert dans le cas contraire</li>
+        </ul>
+      </div>
+      
+      <div>
+        <u>Exemples&#x202f;:</u><br />
+        Un réfrigérateur, une pompe à chaleur, un moteur à air chaud sont des machines thermiques en
+        cycle fermé.<br />
+        Le moteur à combustion interne, le moteur à réaction sont des machines thermiques à cycle
+        ouvert.
+      </div>
+      
+      <div>
+        On distingue deux types de machines thermiques&#x202f;:
+        <ul>
+          <li>les <b>moteurs</b> sont des machines qui fournissent un travail mécanique global vers
+          l’extérieur&#x202f;: \(W \lt 0\)</li>
+          <li>les <b>récepteurs</b> sont des machines qui reçoivent du travail afin de produire un
+          transfert thermique dans un sens <q>non naturel</q> (du froid vers le chaud)</li>
+        </ul>
+      </div>
+      
+      <div>
+        Pour mesurer la performance de ces conversions d’énergie, on définit l’efficacité par le
+        facteur&#x202f;:
+        $$
+          \quad \boxed{ \eta = \left| \frac{\text{énergie utile}}{\text{énergie couteuse}} \right| }
+        $$
+      </div>
+      
+      <h3>Cycle monotherme fermé</h3>
+      
+      <div>
+        Considérons un fluide échangeant, au cours d’un cycle, une énergie thermique \(Q_1\) avec un
+        <a href="https://sciencesingenieur.github.io/Thermodynamique/Entropie/Entropie.html#thermostat">
+        thermostat</a> de température \(T_1\), et un travail total \(W\). On parle de <b>cycle
+        monotherme</b>.
+      </div>
+      
+      <div>
+        Les bilans d’énergie et d’entropie effectués sur un cycle nous amène à écrire&#x202f;:
+        $$
+          \quad \Delta U = 0 = Q_1 + W
+        $$
+        et
+        $$
+          \quad \Delta S = 0 = \frac{Q_1}{T_1} + S_c \ge \frac{Q_1}{T_1}
+        $$
+      </div>
+      
+      <div>
+        En effet, comme le fluide revient dans le même état après un cycle, la variation de toute
+        fonction d’état est nulle après un cycle. On en tire \(Q_1 \le 0\) et \(W \ge 0\). Autrement
+        dit, ça ne peut pas être un moteur.
+      </div>
+      
+      
+      <figure>
+        <img src="cycle_monotherme.svg">
+        <figcaption>Schéma énergétique d’une machine monotherme.</figcaption>
+      </figure>
+      
+      <div>
+        <u><b>Principe de Thomson</b>&#x202f;:</u><br />
+         Il n’existe pas de moteur fonctionnant de manière cyclique qui produise du travail à partir
+         d’une seule source de chaleur.
+      </div>
+      
+      <div>
+        Cet énoncé que l’on doit à William Thomson (Lord Kelvin) est complètement équivalent au
+        second principe.
+      </div>
+      
+      <h3>Moteur ditherme</h3>
+      
+      <div>
+        Considérons un fluide qui, au cours d’un cycle de transformations, échange de l’énergie
+        thermique avec deux thermostats. On note \(Q_f\) le transfert thermique échangé avec une
+        source froide de température \(T_f\), et \(Q_c\) celui échangé avec une source chaude de
+        température \(T_c \gt T_f\). On note \(W\) le travail total échangé au cours d’un cycle.
+      </div>
+      
+      <div>
+        Un bilan d’énergie et d’entropie donne&#x202f;:
+        $$
+          \quad W + Q_f + Q_c = 0
+        $$
+        et
+        $$
+          \quad \frac{Q_c}{T_c} + \frac{Q_f}{T_f} \le 0
+        $$
+      </div>
+      
+      <figure>
+        <img src="moteur_ditherme.svg">
+        <figcaption>Schéma énergétique d’un moteur ditherme.</figcaption>
+      </figure>
+      
+      <div>
+        Par définition d’un moteur, la machine doit fournir du travail&#x202f;: \(W \lt 0\). Il en
+        découle deux relations d’ordre&#x202f;:
+        $$
+          \quad Q_f + Q_c \gt 0
+        $$
+        et
+        $$
+          \quad \frac{Q_f}{T_f} \le \frac{Q_c}{T_c}
+        $$
+        c’est-à-dire
+        $$
+          \quad 0 \lt Q_f + Q_c \le Q_c \left( 1 - \frac{T_f}{T_c} \right)
+        $$
+        En conclusion, la source chaude doit fournir de la chaleur (\(Q_c \gt 0\)) et la source
+        froide en absorber (\(Q_f \lt 0\)).
+      </div>
+      
+      <div>
+        Le plus souvent, la source froide est l’atmosphère dont l’existence ne nous coûte rien.
+        L’efficacité du moteur est alors définie par&#x202f;:
+        $$
+          \quad \boxed{ \eta_\text{moteur} = \frac{|W|}{Q_c} = \frac{-W}{Q_c} }
+        $$
+      </div>
+      
+      <div>
+        Ce rendement ne peut pas dépasser une valeur maximale fixée par la température des sources
+        chaudes et froides. En effet,
+        $$
+          \quad \frac{-W}{Q_c} = \frac{Q_f + Q_c}{Q_c} \le 1 - \frac{T_f}{T_c} \le 1
+        $$
+      </div>
+      
+      <div>
+        <u><b>Théorème de Carnot</b>&#x202f;:</u><br />
+        L’efficacité d’un moteur ditherme est maximale lorsque le cycle est décrit de façonr
+        éversible. Cette efficacité maximale, également appelée rendement de Carnot, ne dépend que
+        des températures \(T_c\) et \(T_f\)&#x202f;:
+        $$
+          \quad \boxed{ \eta_\text{moteur} \le \eta_\text{carnot} = 1 - \frac{T_f}{T_c} }
+        $$
+      </div>
+      
+      <div>
+        Plus les irréversibilités sont importantes et plus l’efficacité s’éloigne du rendement de
+        Carnot.
+      </div>
+      
+      <h4>Cycle de Carnot</h4>
+      
+      <div>
+        Le cycle décrit par un moteur ditherme réversible est dit cycle de Carnot. Il est constitué
+        de deux isothermes \(T_c\) et \(T_f\) durant lesquels le fluide échange de l’énergie
+        thermique, et deux adiabatiques réversible, c’est-à-dire deux isentropiques.
+      </div>
+      
+      <figure>
+        <img src="cycle_carnot.svg">
+        <figcaption>Cycle de Carnot représenté dans le diagramme p-V (diagramme de Watt) et le
+        diagramme T-S.</figcaption>
+      </figure>
+      
+      <div>
+        Dans le diagramme de Watt (diagramme p-V), le cycle décrit un circuit dont l’aire représente
+        le travail fourni durant un cycle. Ce cycle est décrit dans le sens horaire car&#x202f;:
+        $$
+          \quad \oint_\text{cycle} p \mathrm{d}V = - W \gt 0
+        $$
+      </div>
+      
+      <div>
+        Dans le diagramme T-S, le cycle de Carnot décrit un rectangle dont l’aire représente la
+        chaleur totale échangée. Ce cycle est décrit dans le sens horaire également car&#x202f;:
+        $$
+          \quad \oint_\text{cycle} T \mathrm{d}S = Q_c + Q_f \gt 0
+        $$
+      </div>
+      
+      <h3>Récepteur ditherme</h3>
+      
+      <div>
+        On a les mêmes équations que pour un moteur ditherme à ceci près que \(W \gt 0\) par
+        hypothèse. On distingue deux types de récepteur&#x202f;:
+        <ul>
+          <li>la machine frigorifique dont le rôle consiste à refroidir une source froide (\(Q_f \gt
+          0\))</li>
+          <li>la pompe à chaleur dont le rôle consiste à réchauffer une source chaude (\(Q_c \gt
+          0\))</li>
+        </ul>
+      </div>
+      
+      <h4>Machine frigorifique ditherme</h4>
+      
+      <div>
+        Le fluide échange de la chaleur avec une source froide (le local à réfrigérer) et une source
+        chaude (l’extérieur). Le bilan d’énergie et d’entropie donne&#x202f;:
+        $$
+          \quad Q_f + Q_c = -W \lt 0
+        $$
+        et
+        $$
+          \quad \frac{Q_f}{T_f} + \frac{Q_c}{T_c} \le 0
+        $$
+        Par définition \(Q_f \gt 0\) (la source froide donne de l’énergie au fluide). Par conséquent
+        \(Q_c \lt 0\)&#x202f;: le fluide cède de l’énergie thermique à l’extérieur.<br />
+        On peut noter que la source chaude reçoit plus de chaleur qu’on en extrait de la source
+        froide, car \(Q_f + Q_c \lt 0\).
+      </div>
+      
+      <figure>
+        <img src="frigo_ditherme.svg">
+        <figcaption>Schéma énergétique d’une machine frigorifique ditherme.</figcaption>
+      </figure>
+      
+      <div>
+        L’efficacité (on parle aussi de COP pour coefficient de performance) d’une machine
+        frigorifique est définie par&#x202f;:
+        $$
+          \quad \boxed{ \eta_\text{frigo} = \frac{Q_f}{W} }
+        $$
+      </div>
+      
+      <div>
+        À l’instar du moteur ditherme, l’efficacité d’une machine frigorifique est maximale lorsque
+        le cycle est décrit de manière réversible, et sa valeur ne dépend que des températures
+        \(T_c\) et \(T_f\)&#x202f;:
+        $$
+          \quad \eta_\text{frigo}^\text{max} = \frac{Q_f}{-Q_f-Q_c} = \frac{1}{-Q_c/Q_f-1}
+           = \frac{1}{T_c/T_f-1} = \frac{T_f}{\Delta T}
+        $$
+      </div>
+      
+      <h4>Pompe à chaleur ditherme</h4>
+      
+      <div>
+        Récepteur ditherme dont la source chaude correspond au local à chauffer. Par définition
+        \(Q_c \lt 0\) (la source chaude reçoit de l’énergie de la part du fluide). Les principes de
+        la thermodynamique aboutissent aux même conclusions que pour la machine frigorifique.
+        Cependant, la définition de l’efficacité est différente&#x202f;:
+        $$
+          \quad \boxed{ \eta_\text{PAC} = \frac{|Q_c|}{W} }
+        $$
+      </div>
+      
+      <figure>
+        <img src="PAC_ditherme.svg">
+        <figcaption>Schéma énergétique d’une pompe à chaleur.</figcaption>
+      </figure>
+      
+      <div>
+        Là encore le facteur de performance est maximum lorsque les transformations sont
+        réversibles. On laisse le lecteur vérifier que&#x202f;:
+        $$
+          \quad \eta_\text{PAC}^\text{max} = \frac{T_c}{\Delta T}
+        $$
+      </div>
+      
+      <h2>Étude d’une machine frigorifique</h2>
+      
+      <div>
+         Les changements d’état sont mis à profit dans les machines frigorifiques et les pompes à
+         chaleur. L’utilisation d’un mélange liquide/gaz est particulièrement intéressante dans la
+         mesure où l’évaporation ou la liquéfaction peuvent s’effecteur à température constante, ce
+         qui permet d’obtenir des efficacités proches de l’efficacité maximale.
+      </div>
+      
+      <div>
+        Nous détaillons ici le cycle simplifié d’une machine frigorifique.
+      </div>
+      
+      <h3>Principe</h3>
+      
+      <div>
+        Un fluide (ammoniac, isobutane, fréons, etc.) décrit un cycle au cours duquel il change
+        d’état. Lors de la vaporisation dans l’évaporateur, le fluide absorbe de l’énergie thermique
+        provenant du local à réfrigérer, ce qui permet de le maintenir froid. Décrivons le cycle
+        thermodynamique décrit par le fluide.
+      </div>
+      
+      <figure>
+        <img src="principe_frigo.svg">
+        <figcaption>Principe d’une machine frigorifique.</figcaption>
+      </figure>
+      
+      <div>
+        <u>Transformation AB&#x202f;:</u> le fluide à l’état de vapeur sèche passe dans un
+        compresseur qui augmente la pression du fluide. Cette compression peut être assimilée en
+        première approximation à une compression adiabatique réversible. La température augmente
+        donc.
+      </div>
+      
+      <div>
+        <u>Transformation BC&#x202f;:</u> la vapeur sèche passe dans le condenseur et cède de la
+        chaleur à l’extérieur en se liquéfiant (\(Q_\text{BC}\)). Supposons que C se trouve sur la
+        courbe de saturation (courbe d’ébullition).
+      </div>
+      
+      <div>
+        <u>Transformation CD&#x202f;:</u> le liquide passe à travers un détendeur. On assimilera
+        cette détente à une détente de Joule-Thomson qui conserve l’enthalpie. Cette détente
+        produit une vaporisation partielle et un refroidissement.
+      </div>
+      
+      <div>
+        <u>Transformation DA&#x202f;:</u> enfin, le mélange liquide/vapeur s’enrichit en vapeur dans
+        l’évaporateur jusqu’à atteindre l’état de vapeu sèche, ce qui absorbe la quantité d’énergie
+        thermique \(Q_\text{DA}\). Le cycle se répète ensuite.
+      </div>
+      
+      <figure>
+        <img src="schema_frigo.jpeg" width="50%">
+        <figcaption>Schéma d’un réfrigérateur.</figcaption>
+      </figure>
+      
+      <h3>Calcul de l’efficacité</h3>
+      
+      <div>
+        Décrivons le cycle dans un diagramme p-v en échelle log, et dans un diagramme des
+        frigoristes. Le trajet AB est supposé adiabatique réversible. Si le fluide est un gaz
+        parfait, la loi de Laplace nous indique que le trajet AB est rectiligne de pente
+        \(-\gamma\). En B on a de la vapeur sèche chaude. Le passage dans le condenseur, le
+        refroidit à la température \(T_c\) puis le liquéfie entièrement. Le passage dans le
+        détendeur de Joule-Thomson conserve l’enthalpie&#x202f;: le trajet est donc vertical dans le
+        diagramme des frigoristes. On arrive sur un palier de température \(T_f\). Il est possible
+        de connaître la composition du mélange à partir de la règle des moments. Enfin, le trajet DA
+        referme le cycle en vaporisant complètement le liquide ce qui absorbe un énergie thermique
+        \(Q_f\).
+      </div>
+      
+      <figure>
+        <img src="cycle_de_Hirn.svg">
+        <figcaption>Diagramme de Clapeyron et des frigoristes du Chlorodifluorométhane.</figcaption>
+      </figure>
+      
+      <div>
+        L’efficacité vaut, si les phases AB et CD sont adiabatiques&#x202f;:
+        $$
+          \quad \eta = \frac{Q_\text{DA}}{W} = \frac{Q_\text{DA}}{-Q_\text{DA}-Q_\text{BC}}
+        $$
+        ce qui donne en termes d’enthalpie&#x202f;:
+        $$
+          \quad \eta = \frac{h_\text{A}-h_\text{D}}{h_\text{D}-h_\text{A}-h_\text{C}+h_\text{B}}
+        $$
+      </div>
+      
+      <div>
+        Ainsi, l’efficacité d’une machine frigorifique se calcule aisément à l’aide d’un diagramme
+        des frigoristes. On peut aussi la calculer à partir des chaleurs latentes et du titre
+        massique \(x_g\) de vapeur en sortie du détendeur (point D). En effet, on a&#x202f;:
+        $$
+          \quad \begin{cases}
+            h_\text{A}-h_\text{D} = m_\ell \ell_\text{vap}(T_f) = m (1-x_g)\ell_\text{vap}(T_f) \\
+            h_\text{C}-h_\text{B} = m c_\text{p,g}(T_c-T_\text{B}) + m \ell_\text{liq}(T_c)
+          \end{cases}
+        $$
+        On en déduit en utilisant \(\ell_\text{liq}(T_c) = - \ell_\text{vap}(T_c)\)&#x202f;:
+        $$
+          \quad \eta = \frac{(1-x_g)\ell_\text{vap}(T_f)}
+            {\ell_\text{vap}(T_c) - (1-x_g)\ell_\text{vap}(T_f) + c_\text{p,g}(T_\text{B} -T_c) }
+        $$
+      </div>
+
+    </section>
+  </body>
+</html>
