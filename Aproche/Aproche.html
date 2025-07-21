@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Aproche thermodynamique</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Aproche thermodynamique</h1>
+
+      <h2>Description d’un système thermodynamique</h2>
+      
+      <h3>Objet d’étude</h3>
+      
+      <div>
+        La thermodynamique étudie les <b>systèmes macroscopiques</b> constitués d’un très grand
+        nombre de particules. Ce nombre \(N\) doit être suffisamment grand pour que les fluctuations
+        liées à la nature microscopique sous-jacente puissent être complètement négligées. En
+        pratique, avec \(𝑁 \sim 1020\) molécules, la loi des grands nombres nous enseigne que les
+        fluctuations relatives sont de l’ordre de \(\frac{1}{\sqrt{N}} \sim 10^{-10}\). En d’autres
+        termes, nous ne <q>voyons</q> que les effets moyens, et les fluctuations microscopiques sont
+        négligeables, voire non mesurables.
+      </div>
+      
+      <div>
+        <u>Exemple&#x202f;:</u><br />
+        Isolons par la pensée un petit cube d’air d’arête \(0{,}1\,\rm{mm}\) dans les conditions
+        normales de pression et de température. Peut-on dire que ce système est un système
+        thermodynamique&#x202f;? Pour répondre à cette question, il suffit d’estimer \(N\). Dans les
+        conditions standards, \(1\,\rm{mole}\) occupe environ \(25\,\rm{L}\). Le volume étant ici de
+        \(1 \times 10^{−9}\,\rm{L}\), le cube contient \(4 \times 10^{−11}\,\rm{mol}\) soit
+        \(N = 24 \times 10^{12}\) molécules. Les fluctuations relatives sont de l’ordre de
+        \(0{,}2 \times 10^{-6}\), largement négligeables. Ce système entre donc dans le cadre de la
+        thermodynamique.<br />
+        Ce petit volume que l’on peut traiter comme un point à notre échelle d’observation, reste
+        macroscopique au sens de la thermodynamique. On parle d’<b>échelle mésoscopique</b>.
+      </div>
+      
+      <figure>
+        <img src="systeme.svg">
+        <figcaption>Le système peut échanger avec l’extérieur, de l’énergie, de la matière et du
+        volume.</figcaption>
+      </figure>
+      
+      <div>
+        Le système est séparé de l’extérieur par une paroi réelle ou fictive. Selon la nature de
+        cette paroi, certains échanges sont possibles ou interdits.<br />
+        Si la paroi est imperméable, le système est <b>fermé</b>.<br />
+        La paroi est dite <b>adiabatique</b> quand elle est imperméable à tout transfert thermique.
+        Sinon, elle est dite <b>diatherme</b>.<br />
+        Enfin le système est <b>isolé</b> quand aucun échange avec l’extérieur n’est possible.
+      </div>
+      
+      <table>
+        <caption>Les différents types d’échange.</caption>
+        <tr>
+          <th>Échange</th>
+          <th>Nature de la paroi</th>
+        </tr>
+        <tr>
+          <td>matière</td>
+          <td>perméable</td>
+        </tr>
+        <tr>
+          <td>énergie thermique</td>
+          <td>diatherme</td>
+        </tr>
+        <tr>
+          <td>volume</td>
+          <td>déformable</td>
+        </tr>
+        <tr>
+          <td>rien</td>
+          <td>imperméable, adiabatique et indéformable</td>
+        </tr>
+      </table>
+      
+      <h3>Variables d’état</h3>
+      
+      <div>
+        Pour rendre compte de l’état macroscopique du système, on utilise un petit jeu de paramètres
+        mesurables que l’on appelle <b>variables d’état</b>. Ce jeu de paramètres dépend du système
+        étudié et de ses transformations.
+      </div>
+      
+      <div>
+        <u>Exemple&#x202f;:</u><br />
+        Pour décrire un mélange gazeux \(\{\rm{A_{(g)}, B_{(g)}}\}\) on peut s’intéresser aux
+        variables d’état suivantes&#x202f;:
+        <ul>
+          <li>son volume \(V\)</li>
+          <li>sa pression \(p\)</li>
+          <li>sa température \(T\)</li>
+          <li>les nombres de mole \(n_\rm{A}\) et \(n_\rm{B}\)</li>
+          <li>son énergie interne \(U\)</li>
+          <li>sa masse volumique \(\rho\)</li>
+        </ul>
+      </div>
+      
+      <div>
+        Parmi ces variables, on en distingue deux types&#x202f;:
+        <ol>
+          <li>Celles qui varient comme la quantité de matière du système sont dites
+          <b>extensives</b>.</li>
+          <li>Celles qui n’en dépendent pas sont dites <b>intensives</b>. Ces grandeurs,
+          contrairement aux grandeurs extensives, peuvent être définies localement en chaque point
+          du système.</li>
+        </ol>
+      </div>
+      
+      <div>
+        <u>Exemple&#x202f;:</u><br />
+        La masse, la quantité de matière, le volume, l’énergie sont des variables extensives.<br />
+        La pression, la masse volumique, la température sont des variables intensives que l’on peut
+        définir localement.
+      </div>
+      
+      <div>
+        Si \(X_1\) et \(X_2\) sont deux grandeurs extensives, alors tout rapport \(X_1/X_2\) est
+        indépendant des quantités de matière et forme donc une grandeur intensive.
+      </div>
+      
+      <table>
+        <caption>Quelques grandeurs intensives, formées par le rapport de deux grandeurs
+        extensives.</caption>
+        <tr>
+          <th>Définition de la grandeur</th>
+          <th>Nature de la grandeur</th>
+        </tr>
+        <tr>
+          <td>\(\rho = m/V\)</td>
+          <td>masse volumique (\(\rm{kg.m^{-3}}\))</td>
+        </tr>
+        <tr>
+          <td>\(v = V/m\)</td>
+          <td>volume massique (\(\rm{m^3.kg^{-1}}\))</td>
+        </tr>
+        <tr>
+          <td>\(V_m = V/n\)</td>
+          <td>volume molaire (\(\rm{m^3.mol^{-1}}\))</td>
+        </tr>
+        <tr>
+          <td>\(M = m/n\)</td>
+          <td>masse molaire (\(\rm{kg.mol^{-1}}\))</td>
+        </tr>
+        <tr>
+          <td>\(x_1 = n_1/(n_1 + n_2)\)</td>
+          <td>fraction molaire (sans dimension)</td>
+        </tr>
+        <tr>
+          <td>\(w_1 = m_1/(m_1 + m_2)\)</td>
+          <td>fraction massique (sans dimension)</td>
+        </tr>
+        <tr>
+          <td>\(e_c = \mathcal{E}_c/m\)</td>
+          <td>énergie cinétique massique (\(\rm{J.kg^{-1}}\))</td>
+        </tr>
+      </table>
+      
+      <div>
+        De la même manière, toute dérivée \(\partial{X_1}/\partial{X_2}\) forme aussi une grandeur
+        intensive. Nous verrons que la température et la pression sont de ce type.
+      </div>
+      
+      <div>
+        Les variables d’état ne sont pas toutes indépendantes. Certaines sont liées par des
+        relations de définition. Par exemple, si l’on connaît le volume \(V\) d’un système ainsi que
+        sa masse volumique \(\rho\), alors sa masse \(m\) en découle par la définition \(m =
+        \rho V\).
+      </div>
+      
+      <div>
+        Il existe également des <b>lois empiriques</b> qui relient certaines variables d’état
+        lorsque le système est dans un état d’équilibre&#x202f;: ce sont les <b>équations d’état</b>
+        que nous voyons plus loin.
+      </div>
+      
+      <h3>Notion de pression</h3>
+      
+      <h4>Définition</h4>
+      
+      <div>
+        Considérons une enceinte dans laquelle une paroi mobile sépare deux fluides. Du fait de
+        l’agitation moléculaire sous jacente, chaque fluide exerce une action mécanique sur la
+        paroi, dite <b>force pressante</b>. Cette force est perpendiculaire à la paroi et d’autant
+        plus grande que la surface de la paroi considérée est grande. Formellement, un élément de
+        surface de la paroi, d’aire \(\mathrm{d}S\), subit une force
+        $$
+          \quad \boxed{ \overrightarrow{\mathrm{d}F} =
+            p(M) \mathrm{d}S \overrightarrow{n}{}^{\rm{ext}} }
+        $$
+        où \(\overrightarrow{n}{}^{\rm{ext}}\) est un vecteur normal dirigé vers l’extérieur du
+        fluide.<br />
+        La grandeur \(p\), appelée pression, est une propriété macroscopique définie en chaque point
+        du fluide (\(p\) est une grandeur locale&#x202f;; il s’agit donc d’une variable intensive).
+        Elle représente une densité surfacique de force, et s’exprime par conséquent en
+        \(\rm{N.m^{−2}}\) dans le Système international d’unités. Par définition, on nomme
+        <b>pascal</b> (symbole \(\rm{Pa}\)) cette unité.
+        $$
+          \quad \boxed{ 1\,\rm{Pa} = 1\,\rm{N.m^{−2}} }
+        $$
+      </div>
+      
+      <figure>
+        <img src="pression.svg">
+        <figcaption>Forces pressantes exercées sur une paroi mobile.</figcaption>
+      </figure>
+      
+      <h4>Interprétation microscopique</h4>
+      
+      <div>
+        C’est à l’échelle microscopique qu’il faut chercher la signification de la pression. La
+        pression a deux origines&#x202f;:
+        <ol>
+          <li>Le choc des molécules sur la paroi. Les molécules en heurtant les parois de l’enceinte
+          transfèrent de la quantité de mouvement et donc une force. À chaque choc, la force induite
+          est d’autant plus intense que les molécules sont lourdes et que leur vitesse est
+          importante. La force moyenne par unité de surface est appelée pression cinétique. On
+          montre en physique statistique qu’elle vaut&#x202f;:
+          $$
+            \quad p_c = \frac{1}{3} n^* m \overline{v^2}
+          $$
+          où \(n^*\) est la densité volumique moléculaire (le nombre de molécules par mètre cube) et
+          \(\overline{v^2}\) le carré moyen de la vitesse des particules.</li>
+          <li>Les interactions entre molécules peuvent amplifier ou diminuer cette pression
+          cinétique. Les collisions moléculaires l’augmentent alors que les interactions attractives
+          de van der Waals la diminuent.</li>
+        </ol>
+      </div>
+      
+      <div>
+        Finalement, la pression s’écrit&#x202f;:
+        $$
+          \quad p_c = \frac{1}{3} n^* m \overline{v^2} + p_m
+        $$
+        où \(p_m\) est la pression dite moléculaire liée aux interactions. Ce terme dépend de la
+        taille des molécules et de la nature des interactions.
+      </div>
+      
+      <figure>
+        <img src="interpretation_pression.svg">
+        <figcaption>Forces pressantes à l’échelle microscopique.</figcaption>
+      </figure>
+      
+      <h4>Autres unités</h4>
+      
+      <div>
+        Il existe également d’autres unités de pression encore très utilisées. Par exemple, il est
+        courant de mesurer la pression à l’aide d’un manomètre à liquide. Celui permet de relier une
+        différence de pression à une dénivellation. On a&#x202f;:
+        $$
+          \quad p - p_{\rm{atm}} = \rho g h
+        $$
+      </div>
+      
+      <figure>
+        <img src="manometre_a_liquide.svg">
+        <figcaption>Manomètre à liquide.</figcaption>
+      </figure>
+      
+      <div>
+        On peut donc exprimer une pression en hauteur de colonne. Le torr est l’unité associé à une
+        colonne de mercure. La correspondance est la suivante&#x202f;:
+        $$
+          \quad 760 \, \rm{mmHg} = 760 \, \rm{torr} = 1 \, \rm{atm} = 1{,}013 \times 10^5 \, \rm{Pa}
+        $$
+      </div>
+      
+      <table>
+        <caption>Autres unités de pression couramment utilisées</caption>
+        <tr>
+          <th>Unités</th>
+          <th>Équivalence en pascal</th>
+        </tr>
+        <tr>
+          <td>\(1 \, \rm{bar}\)</td>
+          <td>\(10^5 \, \rm{Pa}\)</td>
+        </tr>
+        <tr>
+          <td>\(1 \, \rm{atm}\)</td>
+          <td>\(1{,}013\,25 \times 10^5 \, \rm{Pa}\)</td>
+        </tr>
+        <tr>
+          <td>\(1 \, \rm{torr}\)</td>
+          <td>\(133{,}3 \, \rm{Pa}\)</td>
+        </tr>
+      </table>
+      
+      <h3>Température absolue</h3>
+      
+      <div>
+        Considérons par exemple deux fluides, notés 1 et 2, séparés par une paroi matérielle fixe.
+        La paroi étant fixe aucun échange d’énergie macroscopique n’est possible. Cependant, à
+        l’échelle microscopique, les molécules peuvent échanger de l’énergie par collision avec la
+        paroi. Ce type d’échange microscopique est appelé <b>transfert thermique</b>. L’intensité de
+        ce transfert thermique dépend notamment de la structure de la paroi.
+      </div>
+      
+      <div>
+        Par définition, la température \(T\) est une <b>propriété macroscopique</b> qui
+        vérifie&#x202f;:
+        <ol>
+          <li>Si \(T_1=T_2\), le système est à l’équilibre thermique et le transfert thermique est
+          nul.</li>
+          <li>Si \(T_1 \gt T_2\), on dit que 1 est plus chaud que 2. Il apparaît alors un transfert
+          thermique dirigé de 1 vers 2</li>
+          <li>Si \(T_1 \lt T_2\), on dit que 1 est plus froid que 2. Il apparaît alors un transfert
+          thermique dirigé de 2 vers 1.</li>
+        </ol>
+      </div>
+      
+      <figure>
+        <img src="transfert_thermique.svg">
+        <figcaption>Transfert thermique.</figcaption>
+      </figure>
+      
+      <div>
+        Il existe différentes échelles de températures comme par exemple l’échelle centigrade basée
+        sur la dilatation d’une colonne de mercure et qui repose sur un étalonnage à deux
+        points&#x202f;: la glace fondante (0 degré centigrade) et le point d’ébullition de l’eau
+        sous 1 atm (100 degrés centigrade). L’intervalle entre ces deux points est ensuite divisé en
+        cent parties égales. Toutefois, cette échelle permet le repérage de la température, mais pas
+        sa mesure au sens strict. Par exemple le rapport de deux températures, exprimées en °C, n’a
+        pas de sens.
+      </div>
+      
+      <figure>
+        <img src="thermometre.svg">
+        <figcaption>Thermomètre à liquide.</figcaption>
+      </figure>
+      
+      <div>
+        Depuis 1954, le système international a introduit l’échelle <b>kelvin</b> (\(\rm{K}\)), qui
+        repose sur la physique des gaz. En effet l’étude des gaz montre que le produit de la
+        pression par le volume molaire d’un gaz en équilibre thermique varie de manière complexe
+        avec la pression. Pour les faibles pressions, ces isothermes sont quasi rectilignes de sorte
+        qu’il est simple d’extrapoler leur limite en \(p=0\). On remarque alors que tous les gaz à
+        la même température présentent la même limite.
+      </div>
+      
+      <figure>
+        <img src="amagat.svg">
+        <figcaption>Diagramme d’Amagat. Influence de la pression sur le produit \(p V_m\) de
+        certains gaz.</figcaption>
+      </figure>
+      
+      <div>
+        Autrement dit&#x202f;:
+        $$
+          \quad \lim_{p \to 0} p V_m = f(T)
+        $$
+        où \(f(T)\) est une fonction croissante de la température.<br />
+        Le choix consiste à prendre \(f(T) = RT\) où \(R\) est une constante à fixer. On aurait pu
+        choisir \(R=1\) par simplicité, mais on a préféré adopter \(R \approx 8{,}314 \,
+        \rm{J.K^{-1}.mol^{-1}}\) pour avoir \(\Delta T\,(\text{kelvin}) = \Delta T\,(\text{°C})\).
+      </div>
+      
+      <div>
+        Aujourd’hui, c’est la constante de Boltzmann \(k_B\) et le nombre d’Avogadro \(N_A\) qui
+        sont fixés. La constante \(R\) s’en déduit via
+        $$
+          \quad R = k_B N_A = 8{,}314\,462\,618\,\rm{J.K^{-1}.mol^{-1}}
+        $$
+      </div>
+      
+      <div>
+        La valeur de \(R\) étant fixée il suffit de mesurer \(\lim_{p \to 0} p V_m\) d’un gaz en
+        contact avec de la glace fondante pour trouver que \(0\,\rm{°C}\) correspond à
+        \(273{,}15\,\rm{K}\). Ainsi, on a la correspondance&#x202f;:
+        $$
+          \quad \boxed{ T\,(\text{kelvin}) = T\,(\text{°C}) + 273{,}15 }
+        $$
+      </div>
+      
+      <h2>Équations d’état</h2>
+      
+      <h3>État d’équilibre</h3>
+      
+      <div>
+        <u>Équilibre thermodynamique&#x202f;:</u><br />
+        Un système est à l’équilibre thermodynamique si l’ensemble des ses variables d’état n’évolue
+        pas durant le temps où on l’observe, et s’il n’est l’objet d’aucun échange macroscopique
+        avec l’extérieur.<br />
+        Dans ce cours, on s’intéresse exclusivement aux propriétés des systèmes à l’équilibre
+        thermodynamique.
+      </div>
+      
+      <div>
+        Exemples de systèmes hors équilibre&#x202f;:<br />
+        <ol>
+          <li>Un fil conducteur où circule un courant électrique n’est pas à l’équilibre parce qu’il
+          y a un flux de charges et une dissipation thermique.</li>
+          <li>Un morceau de métal reliant un corps chaud à un corps froid n’est pas à l’équilibre
+          parce qu’un flux thermique traverse le métal depuis le corps chaud vers le corps
+          froid.</li>
+        </ol>
+      </div>
+      
+      <div>
+        Un système à l’équilibre présente en général une ou plusieurs <b>phases</b> dans lesquelles
+        les variables intensives sont <b>uniformes</b> et <b>stationnaires</b>. L’équilibre
+        thermodynamique est assuré grâce à des processus microscopiques qui permettent d’assurer
+        l’uniformité des variables intensives. Passons en revue quelques processus d’importance.
+      </div>
+      
+      <h4>Processus thermique</h4>
+      
+      <div>
+        En présence d’un gradient thermique, un flux d’énergie thermique allant des zones chaudes
+        vers les zones froides aura pour effet d’atténuer le gradient thermique initial&#x202f;:
+        c’est l’équilibre thermique. En présence d’une paroi adiabatique, ce processus sera
+        bloqué&#x202f;: on parle alors d’équilibre thermique frustré.
+      </div>
+      
+      <figure>
+        <img src="equilibre_thermique.svg">
+        <figcaption>Système en déséquilibre ou équilibre thermique.</figcaption>
+      </figure>
+      
+      <h4>Processus diffusif</h4>
+      
+      <div>
+        En présence d’un gradient de concentration, un courant de diffusion moléculaire aura pour
+        effet d’atténuer les inhomogénéités de concentrations&#x202f;: c’est l’équilibre diffusif.
+        Évidemment, en présence d’une paroi imperméable, ce processus est bloqué.
+      </div>
+      
+      <figure>
+        <img src="equilibre_diffusif.svg">
+        <figcaption>Système en déséquilibre ou équilibre chimique.</figcaption>
+      </figure>
+      
+      <h4>Processus mécanique</h4>
+      
+      <div>
+        En présence d’un gradient de pression, une partie du système sera soumis à des forces qui le
+        mettront en mouvement ce qui aura pour effet d’homogénéiser la pression&#x202f;: c’est
+        l’équilibre mécanique.
+      </div>
+      
+      <figure>
+        <img src="equilibre_mecanique.svg">
+        <figcaption>Déséquilibre et équilibre mécanique.</figcaption>
+      </figure>
+      
+      <div>
+        Toutefois, si en plus des forces de pression le système est soumis à un champ de forces
+        volumiques extérieures comme la pesanteur, la pression ne sera plus homogène mais seulement
+        continue.
+      </div>
+      
+      <h4>Exemple</h4>
+      
+      <div>
+        Considérons un verre d’eau au repos dans le champ de pesanteur et en équilibre thermique
+        avec l’environnement qui impose une température de \(20\,°C\).
+      </div>
+      
+      <figure>
+        <img src="equilibre_champ_pesanteur.svg">
+        <figcaption>Verre d’eau au repos dans le champ de pesanteur.</figcaption>
+      </figure>
+      
+      <div>
+        La température en tant que variable intensive est bien uniforme au sein de l’unique phase
+        liquide du système. Cependant, l’équilibre mécanique de chaque partie du liquide impose que
+        la pression augmente au fur et à mesure que l’on descend jusqu’au fond du verre. La
+        pesanteur empêche la pression de rester uniforme&#x202f;: ici le champ de pression est
+        stationnaire et continue à l’équilibre.
+      </div>
+      
+      <h3>Variance</h3>
+      
+      <div>
+        Considérons un système thermodynamique présentant plusieurs phases et plusieurs
+        constituants. L’équilibre thermodynamique de toutes les phases se traduit par l’existence de
+        plusieurs relations entre les variables d’états&#x202f;: ce sont les <b>équations
+        d’état</b>. En thermodynamique classique, c’est par une étude expérimentale que l’on
+        détermine la forme de ces équations.
+      </div>
+      
+      <div>
+        Ces relations impliquent que le nombre de variables indépendantes est en général faible. Les
+        variables intensives (température, pression, variables de composition comme les fractions
+        molaires ou les concentrations) présentent un intérêt car elles sont facilement contrôlables
+        par l’expérimentateur et ne dépendent pas de la quantité de matière. Il est donc utile de
+        connaître le nombre de variables intensives que l’on peut controler indépendamment. Ce
+        nombre est appelé <b>variance</b> et noté \(\mathcal{V}\). La règle de Gibbs permet le
+        calcul de la variance d’un système.
+      </div>
+      
+      <div>
+        <u>Règle de Gibbs&#x202f;:</u><br />
+        Pour un système constitué de \(c\) constituants, présentant \(\varphi\) phases en équilibre
+        thermique et mécanique et qui n’est le siège d’aucune réaction chimique, on a&#x202f;:
+        $$
+          \quad \boxed{ \mathcal{V} = c + 2 - \varphi}
+        $$
+      </div>
+      
+      <div>
+        Prenons par exemple un fluide monophasé composé d’un seul type de constituants (du méthane
+        par exemple). On a&#x202f;:
+        $$
+          \quad c = 1 \quad \varphi = 1 \Rightarrow \mathcal{V} = 2
+        $$
+        On dit que le système est <b>divariant</b>. Il n’y a que deux variables intensives
+        indépendantes. Par exemple, la température \(T\) et le volume molaire \(V_m\). Ainsi toute
+        grandeur intensive doit s’exprimer en fonction de ces deux grandeurs. On pourra
+        écrire&#x202f;:
+        $$
+          \quad p = p(T,V_m)
+        $$
+        et
+        $$
+          \quad \rho = \rho(T,V_m)
+        $$
+      </div>
+      
+      <div>
+        <u>Exemple&#x202f;: l’équation de van der Waals</u><br />
+        C’est l’équation d’état la plus simple pour décrire un fluide réel. On la doit à Johannes
+        Diderik van der Waals qui obtint le prix Nobel de physique en 1910 pour ces travaux sur les
+        gaz et les liquides. L’équation d’état qu’il propose s’écrit&#x202f;:
+        $$
+          \quad p = \frac{RT}{V_m - b} - \frac{a}{{V_m}^2}
+        $$
+        où \(a\) et \(b\) sont deux paramètres empiriques qui dépendent de la nature des molécules
+        constituant le gaz. Ce modèle a le mérite de prévoir la transition de phase liquide-gaz
+        ainsi que la continuité liquide-gaz pour des températures supérieures à la température
+        critique.
+      </div>
+      
+      <div>
+        Quant aux grandeurs extensives indépendantes, elles sont au nombre de \(\varphi\), car il en
+        faut une par phase pour décrire toute propriété extensive d’une phase. Dans notre exemple
+        d’un fluide monophasé, on pourra choisir la masse \(m\) comme variable extensive
+        indépendante, et toute grandeur extensive s’écrira&#x202f;:
+        $$
+          \quad X = X(m,T,V_m) = m \times x(T,V_m)
+        $$
+      </div>
+      
+      <h3>Le gaz parfait</h3>
+      
+      <div>
+        Le gaz parfait est un modèle utilisé pour décrire les gaz aux basses pressions. Il repose
+        sur les hypothèses suivantes&#x202f;:
+        <ul>
+          <li>les molécules ou atomes le constituant sont supposés ponctuels et sans interaction
+          entre eux</li>
+          <li>les seules interactions sont celles entre les molécules et la paroi de l’enceinte qui
+          enferme le gaz</li>
+          <li>à l’échelle microscopique le gaz est le siège d’un chaos moléculaire statistiquement
+          homogène et isotrope</li>
+        </ul>
+      </div>
+      
+      <div>
+        Du fait de l’interaction négligeable entre les molécules, on peut dire que le modèle du gaz
+        parfait donne le comportement limite de tous les gaz lorsque la distance intermoléculaire
+        tend vers l’infini, c’est-à-dire lorsque la pression tend vers 0&#x202f;:
+        $$
+          \quad \text{gaz parfait} = \lim_{V \to \infty} (\text{gaz réel})
+            = \lim_{p \to 0} (\text{gaz réel})
+        $$
+      </div>
+      
+      <div>
+        Or, la température thermodynamique est précisément construite à partir du comportement
+        limite des gaz réels. Ainsi, pour un gaz parfait on a&#x202f;:
+        $$
+          \quad p V_m =  \lim_{p \to 0} \left. (p V_m) \right|_{\rm{gaz\,réels}} = RT
+        $$
+      </div>
+      
+      <div>
+        Remplaçons le volume molaire par \(V/n\) et l’on obtient l’équation d’état du gaz
+        parfait&#x202f;:
+        $$
+          \quad \boxed{ \begin{aligned}
+            pV &= n\,RT \\
+            \rm{Pa} \times \rm{m^3} &= \rm{mol} \times \rm{J.K^{-1}.mol^{-1}} \times \rm{K}
+          \end{aligned} }
+        $$
+        Ce modèle décrit bien les gaz tant que la pression reste faible et qu’on se situe loin de la
+        transition de phase gaz-liquide.
+      </div>
+      
+      <div>
+        De cette loi, il découle plusieurs propriétés&#x202f;:
+        <ol>
+          <li>Tous les gaz parfaits ont le même volume molaire dans les mêmes conditions de pression
+          et de température puisque \(V_m = RT/p\).</li>
+          <li>Contrairement au volume molaire, la masse volumique d’un gaz parfait dépend de sa
+          nature chimique. En effet&#x202f;:
+          $$
+            \quad \rho = \frac{m}{V} = \frac{nM}{V} = \frac{Mp}{RT}
+          $$
+          La masse volumique est proportionnelle à la masse molaire.</li>
+          <li>La densité d’un gaz, compare sa masse volumique à celle de l’air dans les mêmes
+          conditions. Si l’on adopte le modèle du gaz parfait pour décrire les gaz, on a&#x202f;:
+          $$
+            \quad d = \frac{\rho_{\rm{gaz}}}{\rho_{\rm{air}}} = \frac{M}{M_{\rm{air}}} =
+              \frac{M}{29}
+          $$
+          avec M expimé en \(\rm{g/mol}\).</li>
+        </ol>
+      </div>
+      
+      <h4>Interprétation microscopique</h4>
+      
+      <div>
+        Dans un gaz parfait, les molécules sont supposées ponctuelles et sans interaction entre
+        elles. De ce fait la pression d’un gaz parfait se réduit à la pression cinétique&#x202f;:
+        $$
+          p_{\rm{GP}} = p_c = \frac{1}{3} n^* m \overline{v^2}
+        $$
+      </div>
+      
+      <div>
+        Calculons l’énergie cinétique moyenne des molécules&#x202f;:
+        $$
+          \quad \overline{e_c} = \frac{1}{2} m \overline{v^2} = \frac{3}{2} \frac{p_{\rm{GP}}}{n^*}
+        $$
+      </div>
+      
+      <div>
+        Utilisons l’équation d’état du gaz parfait et faisons intervenir le nombre d’Avogadro
+        \(N_A\)&#x202f;:
+        $$
+          \quad \overline{e_c} = \frac{3}{2} \frac{nRT/V}{nN_A/V} = \frac{3}{2} \frac{R}{N_A} T
+        $$
+      </div>
+      
+      <div>
+        L’énergie cinétique moyenne est donc proportionnelle à la température. Autrement dit, la
+        température d’un gaz parfait mesure l’énergie cinétique liée au chaos moléculaire. On parle
+        d’agitation thermique.<br />
+        La constante \(R/N_A\) joue un rôle clé en physique statistique. On l’appelle constante de
+        Boltzmann et la note \(k_B\). On a donc&#x202f;:
+        $$
+          \quad \overline{e_c} = \frac{1}{2} m \overline{v^2} = \frac{3}{2} k_B T
+        $$
+      </div>
+      
+      <h3>Mélange idéal de gaz parfaits</h3>
+      
+      <div>
+        Un mélange de gaz parfaits est idéal s’il n’y a pas d’interaction entre les molécules des
+        différents gaz. L’ensemble se comporte alors comme un gaz parfait. Pour fixer les idées,
+        prenons un mélange de deux gaz parfaits (1 et 2). On définit les <b>fractions molaires</b>
+        par&#x202f;:
+        $$
+          \quad x_1 = \frac{n_1}{n_1 + n_2}
+        $$
+        et
+        $$
+          \quad x_2 = \frac{n_2}{n_1 + n_2}
+        $$
+        On a bien sûr \(x_1+x_2=1\) par conservation de la matière.
+      </div>
+      
+      <div>
+        La <b>pression partielle</b> est la pression qu’aurait un gaz s’il occupait tout le volume
+        dans les mêmes conditions de pression et de température. En appliquant la loi du gaz parfait, on
+        obtient&#x202f;:
+        $$
+          \quad p_1 = \frac{n_1RT}{V} = \frac{n_1}{n_1+n_2} \frac{(n_1+n_2)RT}{V} = x_1p
+        $$
+        De même,
+        $$
+          \quad p_2 = x_2p
+        $$
+      </div>
+      
+      <div>
+        <u>Loi de Dalton&#x202f;:</u><br />
+        La pression totale d’un mélange idéal de gaz parfaits est la somme des pressions partielles
+        des différents gaz constituant le mélange&#x202f;:
+        $$
+          \quad \boxed{ p = \sum_i p_i }
+        $$
+        avec \( p_i = x_i p\).
+      </div>
+      
+      <div>
+        D’après la règle de Gibbs, la variance vaut 3, ici. En effet,
+        $$
+          \quad c = 2 \quad \varphi = 1 \Rightarrow \mathcal{V} = 3
+        $$
+      </div>
+      
+      <div>
+        Toutes les grandeurs intensives s’expriment en fonction de trois variables intensives
+        indépendantes. Si l’on choisit \(T\), \(p\) et \(x_1\), on peut écrire par exemple
+        \(\rho = \rho(T,p,x_1)\) et \(V_m=V_m(T,p,x_1)\).
+      </div>
+
+    </section>
+  </body>
+</html>
